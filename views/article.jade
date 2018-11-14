@@ -1,0 +1,13 @@
+include ./layout
+
+block content
+	div.container
+		div.rows
+			div.col-lg-12.col-sm-12
+			div.col-md-12
+				span 标题
+				input(type="text",id="title")
+				script(id="container",name="content",type="text/plain")
+				button(type="button" ,class="btn btn-default" ,id="save") 提交
+				script(src="/javascripts/ueditor.js")
+			div.col-md-6

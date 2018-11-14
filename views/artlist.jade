@@ -1,0 +1,11 @@
+doctype html
+html
+	head
+		title 文章列表
+	body
+		block content
+		div
+			ul
+			each item in result
+				li
+				a(href="/articles/ditle?id=#{item.id}",target="_blank") #{item.title}

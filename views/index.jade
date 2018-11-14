@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome  #{title}
+  a(href="/users/queryAll" target="_blank") 用户
+  br
+  a(href="/articles/Article" target="_blank") 写文章
+  br
+  a(href="/articles/queryAll",target="_blank")列表
