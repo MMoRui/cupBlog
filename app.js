@@ -44,12 +44,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-var server = app.listen(8999, function () {
+// var server = app.listen(8999, function () {
  
-  var host = server.address().address
-  var port = server.address().port
+//   var host = server.address().address
+//   var port = server.address().port
  
-  console.log("应用实例，访问地址为 http://%s:%s", host, port)
+//   console.log("应用实例，访问地址为 http://%s:%s", host, port)
  
-})
+// })
 module.exports = app;
