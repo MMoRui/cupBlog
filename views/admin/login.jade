@@ -1,15 +1,19 @@
 doctype html
 html
 	head
-		title 文章列表
+		title code monkey
+		link(rel='stylesheet', href='/stylesheets/style.css')
 	body
-		h1 Login...
+	div(class="login_tb")
+		center
+			h1(class="login_title") Login
 		form(action="/login", method="post")
-			div
-				span account:
-				input(name="name")
-			div
-				span password:
-				input(name="password")
-			div
-				button(type="submit") 登录
+			ul
+				li
+					span  &nbsp;&nbsp;&nbsp;account:
+					input(name="name")
+				li
+					span password:
+					input(name="password")
+				li
+					button(type="submit") 登录

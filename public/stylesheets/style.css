@@ -1,9 +1,37 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: yellow;
+  background-color: #bec0c2;
 }
 
 a {
   color: #00B7FF;
+}
+.login_tb{
+	background: #00758f;
+	border: 1px solid #ccc;
+	width: 400px;
+	height: 300px;
+	margin: 0 auto;
+}
+.login_tb li{
+	line-height: 30px;
+	list-style: none;
+}
+.login_tb li span{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+.login_title{
+	color: #fb8e06;
+}
+.login_tb button{
+	cursor: pointer;
+	border: 0px;
+	margin-left: 63px;
+    margin-top: 11px;
+	width: 60px;
+	height: 30px;
+	background: #3a913f;
+	color: #fff;
 }
