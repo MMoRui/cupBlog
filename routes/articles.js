@@ -15,6 +15,7 @@ router.get('/addArticleMiddle', function(req, res, next) {
 		title:'添加用户页'
 	});
 });
+router.get('/Article', checkLogin);
 router.get('/Article', function(req, res, next) {
 	res.render('article',{
 		title:'添加文章'
@@ -24,7 +25,7 @@ router.get('/Article', function(req, res, next) {
 router.get('/queryAll', function(req, res, next) {
 	articleDao.queryAll(req, res, next);
 });
-//
+router.get('/queryList', checkLogin);
 router.get('/queryList', function(req, res, next) {
 	articleDao.queryList(req, res, next);
 });
@@ -44,3 +45,10 @@ router.get('/ditle', function(req, res, next) {
 	articleDao.queryById(req, res, next);
 });
 module.exports = router;
+function  checkLogin(req, res, next) { 
+	if (!req.session.adminuser) { 
+	//	req.flash('error', '未登入'); 
+		return  res.render('admin/login'); 
+	} 
+	next(); 
+}

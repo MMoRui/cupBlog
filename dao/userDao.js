@@ -3,7 +3,7 @@ var mysql = require('mysql');
 var $conf = require('../conf/conf');
 // var $util = require('../util/util');
 var $sql = require('./userSqlMapping');
-
+var q=require('q');
 // 使用连接池，提升性能
 // var pool  = mysql.createPool($util.extend({}, $conf.mysql));
 var pool = mysql.createPool( $conf.mysql );
@@ -97,6 +97,21 @@ module.exports = {
 				connection.release();
 			});
 		});
+	},
+	queryByName: function (name) {
+	  	var defer = q.defer();
+		var name= name; 					// 为了拼凑正确的sql语句，这里要转下整数
+		pool.getConnection(function(err, connection) {
+			connection.query($sql.queryByName, name, function(err, result) {
+			 	if(err){
+					defer.reject(err)
+				}else{
+					defer.resolve(result)
+				}
+				connection.release();
+			});
+		});
+		 return defer.promise;
 	},
 	queryAll: function (req, res, next) {
 		pool.getConnection(function(err, connection) {
