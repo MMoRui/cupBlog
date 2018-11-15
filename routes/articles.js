@@ -6,7 +6,7 @@ var articleDao = require('../dao/articleDao');
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-// 增加为你而战
+// 增加文章
 router.post('/addArticle', function(req, res, next) {
 	articleDao.add(req, res, next);
 });
@@ -17,7 +17,7 @@ router.get('/addArticleMiddle', function(req, res, next) {
 });
 router.get('/Article', function(req, res, next) {
 	res.render('article',{
-		title:'添加文'
+		title:'添加文章'
 	});
 });
 //获取所有文章包括内容
