@@ -47,15 +47,14 @@ module.exports = {
 	delete: function (req, res, next) {
 		// delete by Id
 		pool.getConnection(function(err, connection) {
-			console.log(req.query.id);
-			var id = +req.query.id;
+			var id =req.body.id;
 			connection.query($sql.delete, id, function(err, result) {
 				if(result.affectedRows > 0) {
-					jsonWrite(res, result);
 					result = {
 						code: 200,
 						msg:'删除成功'
 					};
+					jsonWrite(res, result);
 				} else {
 					result = void 0;
 					jsonWrite(res, result);
@@ -110,6 +109,18 @@ module.exports = {
 				console.log(result);
 				res.render('artlist',{
 					title:'列表页',
+					result:result
+				});
+				connection.release();
+			});
+		});
+	},///获取文章列表
+	queryList:function(req,res,next){
+		pool.getConnection(function(err, connection) {
+			connection.query($sql.queryList, function(err, result) {
+				console.log(result);
+				res.render('ArticleManage',{
+					title:'文章列表',
 					result:result
 				});
 				connection.release();

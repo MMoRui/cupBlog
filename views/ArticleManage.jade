@@ -1,0 +1,19 @@
+include ./layout
+
+block content
+	div.container
+		div.rows
+			div.col-lg-12.col-sm-12
+			div.col-md-12
+				table(class="table")
+						thead
+							tr
+							th 标题
+							th 操作
+						tbody
+						each item in result
+							tr
+								td !{item.title}
+								td
+									a(href="javascript:;" onclick="delArticle('#{item.id}')") 删除
+						script(src="/javascripts/article.js")

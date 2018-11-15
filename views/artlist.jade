@@ -1,11 +1,16 @@
-doctype html
-html
-	head
-		title 文章列表
-	body
-		block content
-		div
-			ul
-			each item in result
-				li
-				a(href="/articles/ditle?id=#{item.id}",target="_blank") #{item.title}
+include ./layout
+
+block content
+	div.container
+		div.rows
+			div.col-lg-12.col-sm-12
+			div.col-md-12
+				table(class="table")
+						thead
+							tr
+							th 列表
+						tbody
+						each item in result
+							tr
+								td
+									a(href="/articles/ditle?id=#{item.id}",target="_blank") !{item.title}

@@ -4,7 +4,8 @@ var article = {
 	delete: 'DELETE FROM article WHERE id=?',
 	queryById: 'SELECT * FROM article WHERE id=?',
 	queryAll: 'SELECT * FROM article',
-	queryartbyid:"SELECT * FROM article where id=?"
+	queryartbyid:"SELECT * FROM article where id=?",
+	queryList:"SELECT id,title FROM article"
 };
 
 module.exports = article;
