@@ -103,6 +103,7 @@ module.exports = {
 		var name= name; 					// 为了拼凑正确的sql语句，这里要转下整数
 		pool.getConnection(function(err, connection) {
 			connection.query($sql.queryByName, name, function(err, result) {
+				console.log(result);
 			 	if(err){
 					defer.reject(err)
 				}else{
