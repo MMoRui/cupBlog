@@ -5,6 +5,9 @@ var userDao = require('../dao/userDao');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'code monkey' });
 });
+router.get('/admin', function(req, res, next) {
+  res.render('admin/index', { title: 'code monkey' });
+});
 router.post('/login/', function(req, res, next) {
 	var name=req.body.name;
 	var password=req.body.password;
