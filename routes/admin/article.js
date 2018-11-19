@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var articleDao = require('../dao/articleDao');
+var articleDao = require('../../dao/articleDao');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -14,7 +14,7 @@ router.get('/addArticleMiddle', function(req, res, next) {
 	res.render('addUser',{
 		title:'添加用户页'
 	});
-});
+}); 
 router.get('/Article', checkLogin);
 router.get('/Article', function(req, res, next) {
 	res.render('article',{

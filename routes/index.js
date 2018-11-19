@@ -18,7 +18,7 @@ router.post('/login/', function(req, res, next) {
     	if(data.length>0){
 	    	if(password==data[0].password){
 	    		req.session.adminuser=data[0];
-	    		res.render('index', { title: 'code monkey' });
+	    		res.render('admin/index', { title: 'code monkey' });
 	    	}else{
 	    		res.render('admin/error', { title: '登录失败' });
 	    	}

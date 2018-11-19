@@ -1,0 +1,24 @@
+include ./layout
+
+block content
+	div(class="container-fluid")
+		div(class="row")
+			div(class="col-sm-3 col-md-2 sidebar")
+				ul.nav.flex-column.bg-light
+					li.nav-item
+						a.nav-link(href="#") 用户管理
+					li.nav-item(class="active")
+						a.nav-link(href="#") 文章管理
+			div.bg-light(class="col-sm-9 col-md-10  main")
+				table(class="table table-bordered")
+						thead
+							tr
+							th 标题
+							th 操作
+						tbody
+						each item in result
+							tr
+								td !{item.title}
+								td
+									a(href="javascript:;" onclick="delArticle('#{item.id}')") 删除
+						script(src="/javascripts/article.js")

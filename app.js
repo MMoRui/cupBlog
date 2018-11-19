@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var session=require('express-session');
 var index = require('./routes/index');
 var users = require('./routes/users');
-var articles=require('./routes/articles');
+var articles=require('./routes/admin/article');
 var app = express();
 
     
@@ -33,7 +33,7 @@ app.use(session({
 }));
 app.use('/', index);
 app.use('/users', users);
-app.use('/articles',articles);
+app.use('/article',articles);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -50,12 +50,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-// var server = app.listen(8999, function () {
- 
-//   var host = server.address().address
-//   var port = server.address().port
- 
-//   console.log("应用实例，访问地址为 http://%s:%s", host, port)
- 
-// })
+
 module.exports = app;

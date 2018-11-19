@@ -119,7 +119,7 @@ module.exports = {
 		pool.getConnection(function(err, connection) {
 			connection.query($sql.queryList, function(err, result) {
 				console.log(result);
-				res.render('ArticleManage',{
+				res.render('admin/articleList',{
 					title:'文章列表',
 					result:result
 				});
